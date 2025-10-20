@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:18
+    ports:
+      - 5432:${DATABASE_PORT:-5432}
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+    volumes:
+      - db:/data/postgres
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DATABASE:-postgres}",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+volumes:
+  db:
