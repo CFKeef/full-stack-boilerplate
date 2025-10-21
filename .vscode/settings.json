@@ -1,9 +1,0 @@
-{
-  "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "/home/patryck/.local/share/mise/shims/node"
-  },
-  "go.goroot": "/home/patryck/.local/share/mise/installs/go/1.25.2",
-  "go.alternateTools": {
-    "go": "/home/patryck/.local/share/mise/shims/go"
-  }
-}

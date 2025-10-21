@@ -1,3 +1,0 @@
-include:
-  - database/compose.yaml
-  - cache/compose.yaml
